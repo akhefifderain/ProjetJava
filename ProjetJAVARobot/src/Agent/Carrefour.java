@@ -64,5 +64,6 @@ public class Carrefour extends Agent{
 			}
 		}
 	}
+
 }
 	
