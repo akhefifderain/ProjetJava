@@ -19,7 +19,7 @@ public abstract class Agent{
 		}
 	}
 	static String caractereImprimable(int i,int j){
-		String r="_X_";
+		String r="X";
 		Agent a;
 		for(int k=0;k<getLA().size();k++){
 			a=(Agent)getLA().get(k);

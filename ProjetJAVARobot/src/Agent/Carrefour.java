@@ -15,6 +15,15 @@ public class Carrefour extends Agent{
 		voie=false;
 		getLA().add(this);
 	}
+	public Carrefour(int i,int j,char t,int f, int l, int h){
+		aff=" ";
+		pos_x=i;pos_y=j;
+		larg=l;haut=h;
+		type=t;
+		fin=f;
+		voie=false;
+		getLA().add(this);
+	}
 	public static void init(){
 		Carrefour c,cc;
 		int s = getLA().size();
