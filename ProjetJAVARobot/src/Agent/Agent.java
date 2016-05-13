@@ -32,11 +32,11 @@ public abstract class Agent{
 	public String toString(){
 		return getClass().getSimpleName()+" "+pos_x+" "+pos_y+" / ";
 	}
-	public String getTypeAgentViaCoor(int x,int y){
+	public Agent getAgentViaCoor(int x,int y){
 		for(int i =0; i<LA.size();i++)
 			if(((Agent) (LA.get(i))).getX()==x&&(((Agent) (LA.get(i))).getY()==y))
-				return ((Agent) LA.get(i)).aff;
-		return " ";
+				return ((Agent) LA.get(i));
+		return null;
 	}
 	public static List getLA() {
 		return LA;

@@ -13,18 +13,12 @@ public class Carrefour extends Agent{
 		type=t;
 		fin=f;
 		voie=false;
-		System.out.println("je viens de créer un carrefour : (" + pos_x +":"+ pos_y+") et une taille de : " + fin);
 		getLA().add(this);
 	}
 	public Carrefour(int i,int j,char t,int f, int l, int h){
-		aff=" ";
-		pos_x=i;pos_y=j;
+		this(i,j,t,f);
 		larg=l;haut=h;
-		type=t;
-		fin=f;
-		voie=false;
-		System.out.println("je viens de créer un super carrefour : (" + pos_x +":"+ pos_y+") et une taille de : " + fin);
-		getLA().add(this);
+		
 	}
 	public static void init(){
 		Carrefour c,cc;

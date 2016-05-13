@@ -6,6 +6,7 @@ public class Robot extends Agent{
 	void cycle(){
 		while(!avancer())
 			changerDir();
+		horloge++;
 	}
 	public Robot(int i,int j,char dir,String n){
 		pos_x=i;pos_y=j;
@@ -46,7 +47,9 @@ public class Robot extends Agent{
 		}
 		return false;
 	}
-
+	//public boolean VoitUnAutreRobot(){
+	//	for(int )
+	//}
 	public void changerDir(){
 		dir = tableauDirection[(int)(Math.random() * ((tableauDirection.length-1)+1))];
 
