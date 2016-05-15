@@ -52,7 +52,7 @@ public abstract class Agent{
 	}
 	public static void faireCycle(){
 		for (int i = 0;i< LA.size();i++){
-			((Agent) LA.get(i)).cycle();
+ 			((Agent) LA.get(i)).cycle();
 		}
 	}
 
