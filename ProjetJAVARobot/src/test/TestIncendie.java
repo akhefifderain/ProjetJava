@@ -16,8 +16,9 @@ public class TestIncendie {
 		Incendie in = new Incendie();
 		Agent.affiche();
 		while(true){
-			Agent.affiche();
+			Agent.verifierIncendie();
  			Agent.faireCycle();
+ 			Agent.affiche();
 			try {
 			    Thread.sleep(1000);                 //1000 milliseconds is one second.
 			} catch(InterruptedException ex) {

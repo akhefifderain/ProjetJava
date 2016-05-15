@@ -3,13 +3,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class Agent{
+	final static int nombreDeRobotDevantEtreAlerte = 2;
 	static int nl=6;
 	static int nc=6;
     private static List LA = new LinkedList();
     char tableauDirection[] = {'n','e','s','o'};
 	int pos_x;
 	int pos_y;
+	public static boolean extinctionIncendie = false;
 	public String aff;
+	
 	int horloge;
 	abstract void cycle();
 	public static void affiche(){
@@ -29,10 +32,11 @@ public abstract class Agent{
 		}
 		return r;
 	}
+	
 	public String toString(){
 		return getClass().getSimpleName()+" "+pos_x+" "+pos_y+" / ";
 	}
-	public Agent getAgentViaCoor(int x,int y){
+	public static Agent getAgentViaCoor(int x,int y){
 		for(int i =0; i<LA.size();i++)
 			if(((Agent) (LA.get(i))).getX()==x&&(((Agent) (LA.get(i))).getY()==y))
 				return ((Agent) LA.get(i));
@@ -54,6 +58,35 @@ public abstract class Agent{
 		for (int i = 0;i< LA.size();i++){
  			((Agent) LA.get(i)).cycle();
 		}
+	}
+	public static void verifierIncendie() {
+		int compteurAlarme = 0;
+		boolean incendie=true;
+		for(int i =0; i<LA.size();i++)
+			if(LA.get(i) instanceof Robot && ((Robot) LA.get(i)).visionFeu)
+				compteurAlarme++;
+			else if(LA.get(i) instanceof Incendie){
+				incendie=true;
+
+			}
+		if (compteurAlarme >= nombreDeRobotDevantEtreAlerte)
+			extinctionIncendie=true;
+		for(int i =0; i<LA.size();i++)
+			if(LA.get(i) instanceof Robot && ((Robot) LA.get(i)).visionFeu)
+				compteurAlarme++;
+		if(!incendie){
+			extinctionIncendie=false;
+			desactiverRobot();
+		}
+		
+		// TODO Auto-generated method stub
+		
+	}
+	private static void desactiverRobot() {
+		for(int i =0; i<LA.size();i++)
+			if(LA.get(i) instanceof Robot)
+				((Robot) LA.get(i)).visionFeu=false;
+		
 	}
 
 }

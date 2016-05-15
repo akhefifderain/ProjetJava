@@ -54,7 +54,13 @@ public class Incendie extends Agent{
 			aff="O";
 			propager();
 		}
-		horloge++;
+		if(Agent.extinctionIncendie){
+			horloge-=2;
+			if(horloge <=0)
+				Agent.getLA().remove(this);
+		}
+		else
+			horloge++;
 		// TODO Auto-generated method stub
 		
 	}
