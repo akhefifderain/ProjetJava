@@ -11,7 +11,7 @@ public class Carte {
 	
 	public Carte(int h,int l, int nb_r){
 		if(nb_r>26){
-			throw new Error("Trop de robooooot");
+			throw new Error("Trop de robooot");
 		}
 		hauteur=h;
 		largeur=l;
