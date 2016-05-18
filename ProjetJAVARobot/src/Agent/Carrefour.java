@@ -47,6 +47,7 @@ public class Carrefour extends Agent{
 							cc=new Carrefour(k,c.pos_y+j,'v',1);
 							cc.voie=true;
 						}
+						
 					}
 					for(int k=c.pos_y-1;k>0&& k>=c.fin;k--){
 						for(int j=0;j<c.larg;j++){

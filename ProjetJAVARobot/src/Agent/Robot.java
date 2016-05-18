@@ -59,7 +59,7 @@ public class Robot extends Agent{
 		visionFeu = false;
 		getLA().add(this);
 	}
-	/*Constructeur pour carte*/
+	/*Constructeur pour carte a*/
 	public Robot(String n){
 		chemin = new LinkedList();
 		pos_x=-1;pos_y=-1;

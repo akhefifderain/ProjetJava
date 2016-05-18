@@ -8,7 +8,7 @@ public class TestIncendie {
 		Robot r2 = new Robot(2,2,'e',"b");
 		Carrefour c1 = new Carrefour(1,1,'v',3,2,1);
 		
-		Carte testcarte = new Carte(10,10,26);
+		Carte testcarte = new Carte(10,10,10);
 		System.out.println(testcarte.toString());
 		/*System.out.println(Agent.getLA());
 		Carrefour.init();

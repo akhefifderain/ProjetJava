@@ -50,6 +50,7 @@ public abstract class Agent{
 	}
 	
 	public void setX(int x){
+		
 		this.pos_x=x;
 	}
 	public void setY(int y){
