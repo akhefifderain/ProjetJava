@@ -48,6 +48,14 @@ public abstract class Agent{
 	public static void setLA(List lA) {
 		LA = lA;
 	}
+	
+	public void setX(int x){
+		this.pos_x=x;
+	}
+	public void setY(int y){
+		this.pos_y=y;
+	}
+	
 	public int getX(){
 		return pos_x;
 	}

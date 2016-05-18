@@ -59,6 +59,16 @@ public class Robot extends Agent{
 		visionFeu = false;
 		getLA().add(this);
 	}
+	/*Constructeur pour carte*/
+	public Robot(String n){
+		chemin = new LinkedList();
+		pos_x=-1;pos_y=-1;
+		this.dir=dir;
+		horloge=0;
+		aff=n;
+		visionFeu = false;
+		getLA().add(this);
+	}
 	/**
 	 * @return
 	 */
