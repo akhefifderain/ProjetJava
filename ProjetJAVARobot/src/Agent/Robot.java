@@ -59,16 +59,7 @@ public class Robot extends Agent{
 		visionFeu = false;
 		getLA().add(this);
 	}
-	/*Constructeur pour carte a*/
-	public Robot(String n){
-		chemin = new LinkedList();
-		pos_x=-1;pos_y=-1;
-		this.dir=dir;
-		horloge=0;
-		aff=n;
-		visionFeu = false;
-		getLA().add(this);
-	}
+
 	/**
 	 * @return
 	 */
@@ -207,8 +198,11 @@ public class Robot extends Agent{
 	//public boolean VoitUnAutreRobot(){
 	//	for(int )
 	//}
+	public static char randomDir(){
+		return tableauDirection[(int)(Math.random() * ((tableauDirection.length-1)+1))]; 
+	}
 	public void changerDir(){
-		dir = tableauDirection[(int)(Math.random() * ((tableauDirection.length-1)+1))];
+		dir = randomDir();
 
 	}
 }

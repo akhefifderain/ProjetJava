@@ -4,10 +4,10 @@ import java.util.List;
 
 public abstract class Agent{
 	final static int nombreDeRobotDevantEtreAlerte = 2;
-	static int nl=6;
-	static int nc=6;
+	public static int nl;
+	public static int nc;
     private static List LA = new LinkedList();
-    char tableauDirection[] = {'n','e','s','o'};
+    static char tableauDirection[] = {'n','e','s','o'};
 	int pos_x;
 	int pos_y;
 	public static boolean extinctionIncendie = false;
@@ -16,15 +16,15 @@ public abstract class Agent{
 	int horloge;
 	abstract void cycle();
 	public static void affiche(){
-		for(int i=1;i<=nl;i++){
+		for(int i=0;i<nl;i++){
 			System.out.print(i+" ");
-			for(int j=1;j<=nc;j++)
+			for(int j=0;j<nc;j++)
 				System.out.print(caractereImprimable(i,j));
 			System.out.println();
 		}
 	}
-	static String caractereImprimable(int i,int j){
-		String r="X";
+	public static String caractereImprimable(int i,int j){
+		String r=".";
 		Agent a;
 		for(int k=0;k<getLA().size();k++){
 			a=(Agent)getLA().get(k);
@@ -34,7 +34,7 @@ public abstract class Agent{
 	}
 	
 	public String toString(){
-		return getClass().getSimpleName()+" "+pos_x+" "+pos_y+" / ";
+		return getClass().getSimpleName()+" "+aff+" "+pos_x+" "+pos_y+" / ";
 	}
 	public static Agent getAgentViaCoor(int x,int y){
 		for(int i =0; i<LA.size();i++)
@@ -68,6 +68,7 @@ public abstract class Agent{
  			((Agent) LA.get(i)).cycle();
 		}
 	}
+	
 	public static void verifierIncendie() {
 		int compteurAlarme = 0;
 		boolean incendie=true;
@@ -97,5 +98,7 @@ public abstract class Agent{
 				((Robot) LA.get(i)).visionFeu=false;
 		
 	}
+	
+	
 
 }
