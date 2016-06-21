@@ -2,6 +2,8 @@ package Agent;
 import java.util.LinkedList;
 import java.util.List;
 
+import autre.Coordonnee;
+
 public abstract class Agent{
 	final static int nombreDeRobotDevantEtreAlerte = 2;
 	static int nl=6;
@@ -88,5 +90,63 @@ public abstract class Agent{
 				((Robot) LA.get(i)).visionFeu=false;
 		
 	}
-
+	public boolean estVu(Robot robot){
+		if(robot.dir=='n'){
+			int vertical = robot.getX()-this.getX();
+			if(vertical >=0 ){
+				// on sait maintenant que le robot est devant nous
+				int horizontal = (int) Math.sqrt(Math.pow(robot.getY()-this.getY(), 2));
+				if(vertical >= horizontal){
+					// il est maintenant dans le champs théorique de vision du robot
+					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
+				}
+			}
+		}
+		else if(robot.dir=='s'){
+			int vertical = robot.getX()-this.getX();
+			if(vertical <=0 ){
+				// on sait maintenant que le robot est devant nous
+				int horizontal = (int) Math.sqrt(Math.pow(robot.getY()-this.getY(), 2));
+				if(vertical >= horizontal){
+					// il est maintenant dans le champs théorique de vision du robot
+					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
+				}
+			}
+		}
+		else if(robot.dir=='e'){
+			int horizontal = robot.getY()-this.getY();
+			if(horizontal <=0 ){
+				// on sait maintenant que le robot est devant nous
+				int vertical = (int) Math.sqrt(Math.pow(robot.getX()-this.getX(), 2));
+				if(vertical <= horizontal){
+					// il est maintenant dans le champs théorique de vision du robot
+					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
+				}
+			}
+		}
+		else if(robot.dir=='o'){
+			int horizontal = robot.getY()-this.getY();
+			if(horizontal >=0 ){
+				// on sait maintenant que le robot est devant nous
+				int vertical = (int) Math.sqrt(Math.pow(robot.getX()-this.getX(), 2));
+				if(vertical <= horizontal){
+					// il est maintenant dans le champs théorique de vision du robot
+					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
+				}
+			}
+		}		
+		return false;
+	}
+	private boolean dichotomie(Coordonnee coor1, Coordonnee coor2) {
+		if((int) Math.sqrt(Math.pow(coor1.x-coor2.x,2))<=1 &&(int) Math.sqrt(Math.pow(coor1.y-coor2.y,2))<=1){
+			return true;
+		}
+		Coordonnee coorMid = new Coordonnee((coor1.x+coor2.x)/2,(coor1.y+coor2.y)/2 );
+		if(Agent.caractereImprimable(coorMid.x, coorMid.y)=="X"){
+			return false;
+		}
+		
+		
+		return dichotomie(coor1,coorMid)&&dichotomie(coorMid,coor2);
+	}
 }

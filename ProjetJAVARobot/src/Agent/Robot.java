@@ -64,98 +64,101 @@ public class Robot extends Agent{
 	 */
 	public boolean vision(){
 		boolean continuer = true;
-		for(int i =1;continuer&&!visionFeu;i++){
-			switch(dir){
-			case 'n':
-				if(Agent.caractereImprimable(pos_x-i, pos_y) == "X"||pos_x-i<=0)
-					continuer=false;
-				else if(!Agent.caractereImprimable(pos_x-i, pos_y).equals(" ")){
-					if(Agent.caractereImprimable(pos_x-i, pos_y) == "O"||Agent.caractereImprimable(pos_x-i, pos_y) == "o"){
-						etatAlerte = true;
-						visionFeu = true; 
-						//si il voit du feu
-					}else{
-						if(etatAlerte&&robotASuivre == null){
-							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x-i, pos_y);
-							tourDetectionRobotASuivre=horloge;
-						}
-						continuer =false;
-						return true;
-					}
-
-				}
-
-
-				break;
-			case 'e':
-				//System.out.println("________________________"+Agent.caractereImprimable(pos_x, pos_y+i)+"___"+pos_x+"____"+pos_y+"_____");
-				if(Agent.caractereImprimable(pos_x, pos_y+i).equals("X")||pos_y+i>nc)
-					continuer=false;
-				else if(Agent.caractereImprimable(pos_x, pos_y+i) != " "&&Agent.caractereImprimable(pos_x, pos_y+i) != "X"){
-					if(Agent.caractereImprimable(pos_x, pos_y+i) == "O"||Agent.caractereImprimable(pos_x, pos_y+i) == "o"){
-						etatAlerte = true;
-						visionFeu = true; 
-						
-						//si il voit du feu
-					}else{
-						if(etatAlerte&&robotASuivre == null){
-							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x, pos_y+i);
-							tourDetectionRobotASuivre=horloge;
-						}
-						continuer =false;
-						return true;
-					}
-
-				}
-
-
-				//			System.out.println("_____________"+Agent.caractereImprimable(pos_x, pos_y+1));
-				break;
-			case 's':
-				if(Agent.caractereImprimable(pos_x+i, pos_y) == "X"||pos_x+i>nl)
-					continuer=false;
-				else if(Agent.caractereImprimable(pos_x+i, pos_y) != " " ){
-					if(Agent.caractereImprimable(pos_x+i, pos_y) == "O"||Agent.caractereImprimable(pos_x+i, pos_y) == "o"){
-						etatAlerte = true;
-						visionFeu = true; 
-						
-						//si il voit du feu
-					}else{
-						if(etatAlerte&&robotASuivre == null){
-							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x+i, pos_y);
-							tourDetectionRobotASuivre=horloge;
-						}
-						continuer =false;
-						return true;
-					}
-
-				}
-
-
-				break;
-			case 'o':
-				if(Agent.caractereImprimable(pos_x, pos_y-i) == "X"||pos_y-i<=0)
-					continuer=false;
-				else if(Agent.caractereImprimable(pos_x, pos_y-i) != " " ){
-					if(Agent.caractereImprimable(pos_x, pos_y-i) == "O"||Agent.caractereImprimable(pos_x, pos_y-i) == "o"){
-						//si il voit du feu
-						etatAlerte = true;
-						visionFeu = true; 
-					}else{						
-						if(etatAlerte&&robotASuivre == null){
-							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x-i, pos_y);
-							tourDetectionRobotASuivre=horloge;
-					}
-						continuer =false;
-						return true;
-					}
-
-				}
-
-
-				break; 
-			}
+		for(int i = 0; i<i Agent.;i++){
+			
 		}
+//		for(int i =1;continuer&&!visionFeu;i++){
+//			switch(dir){
+//			case 'n':
+//				if(Agent.caractereImprimable(pos_x-i, pos_y) == "X"||pos_x-i<=0)
+//					continuer=false;
+//				else if(!Agent.caractereImprimable(pos_x-i, pos_y).equals(" ")){
+//					if(Agent.caractereImprimable(pos_x-i, pos_y) == "O"||Agent.caractereImprimable(pos_x-i, pos_y) == "o"){
+//						etatAlerte = true;
+//						visionFeu = true; 
+//						//si il voit du feu
+//					}else{
+//						if(etatAlerte&&robotASuivre == null){
+//							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x-i, pos_y);
+//							tourDetectionRobotASuivre=horloge;
+//						}
+//						continuer =false;
+//						return true;
+//					}
+//
+//				}
+//
+//
+//				break;
+//			case 'e':
+//				//System.out.println("________________________"+Agent.caractereImprimable(pos_x, pos_y+i)+"___"+pos_x+"____"+pos_y+"_____");
+//				if(Agent.caractereImprimable(pos_x, pos_y+i).equals("X")||pos_y+i>nc)
+//					continuer=false;
+//				else if(Agent.caractereImprimable(pos_x, pos_y+i) != " "&&Agent.caractereImprimable(pos_x, pos_y+i) != "X"){
+//					if(Agent.caractereImprimable(pos_x, pos_y+i) == "O"||Agent.caractereImprimable(pos_x, pos_y+i) == "o"){
+//						etatAlerte = true;
+//						visionFeu = true; 
+//						
+//						//si il voit du feu
+//					}else{
+//						if(etatAlerte&&robotASuivre == null){
+//							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x, pos_y+i);
+//							tourDetectionRobotASuivre=horloge;
+//						}
+//						continuer =false;
+//						return true;
+//					}
+//
+//				}
+//
+//
+//				//			System.out.println("_____________"+Agent.caractereImprimable(pos_x, pos_y+1));
+//				break;
+//			case 's':
+//				if(Agent.caractereImprimable(pos_x+i, pos_y) == "X"||pos_x+i>nl)
+//					continuer=false;
+//				else if(Agent.caractereImprimable(pos_x+i, pos_y) != " " ){
+//					if(Agent.caractereImprimable(pos_x+i, pos_y) == "O"||Agent.caractereImprimable(pos_x+i, pos_y) == "o"){
+//						etatAlerte = true;
+//						visionFeu = true; 
+//						
+//						//si il voit du feu
+//					}else{
+//						if(etatAlerte&&robotASuivre == null){
+//							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x+i, pos_y);
+//							tourDetectionRobotASuivre=horloge;
+//						}
+//						continuer =false;
+//						return true;
+//					}
+//
+//				}
+//
+//
+//				break;
+//			case 'o':
+//				if(Agent.caractereImprimable(pos_x, pos_y-i) == "X"||pos_y-i<=0)
+//					continuer=false;
+//				else if(Agent.caractereImprimable(pos_x, pos_y-i) != " " ){
+//					if(Agent.caractereImprimable(pos_x, pos_y-i) == "O"||Agent.caractereImprimable(pos_x, pos_y-i) == "o"){
+//						//si il voit du feu
+//						etatAlerte = true;
+//						visionFeu = true; 
+//					}else{						
+//						if(etatAlerte&&robotASuivre == null){
+//							robotASuivre = (Robot) Agent.getAgentViaCoor(pos_x-i, pos_y);
+//							tourDetectionRobotASuivre=horloge;
+//					}
+//						continuer =false;
+//						return true;
+//					}
+//
+//				}
+//
+//
+//				break; 
+//			}
+//		}
 		return false;
 	}
 	public boolean avancer(){
