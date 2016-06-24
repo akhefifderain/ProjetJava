@@ -96,6 +96,7 @@ public class Robot extends Agent{
 		visionFeu = false;
 		getLA().add(this);
 	}
+
 	/**
 	 * @return
 	 */
@@ -280,13 +281,20 @@ public class Robot extends Agent{
 	//public boolean VoitUnAutreRobot(){
 	//	for(int )
 	//}
+	public static char randomDir(){
+		return tableauDirection[(int)(Math.random() * ((tableauDirection.length-1)+1))]; 
+	}
 	public void changerDir(){
+
 		if(robotASuivre==null){
 			char ProchaineDir=dir;
 			while(ProchaineDir == dir){
 				ProchaineDir = tableauDirection[(int)(Math.random() * ((tableauDirection.length-1)+1))];
 			}
 			dir = ProchaineDir;
+
+		dir = randomDir();
+
 
 		
 		}

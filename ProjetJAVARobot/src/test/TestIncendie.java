@@ -1,17 +1,26 @@
 package test;
-import Agent.Agent;
-import Agent.Carrefour;
-import Agent.Incendie;
-import Agent.Robot;
+import Agent.*;
+import autre.*;
 
 public class TestIncendie {
 	public static void main(String[] args) {
+
 		Robot r1 = new Robot(1,1,'e',"a");
 		Robot r2 = new Robot(1,2,'e',"b");
 		Carrefour c1 = new Carrefour(1,1,'v',3,2,1);
 		
 		System.out.println(Agent.getLA());
+
+		//Robot r1 = new Robot(1,1,'e',"a");
+		//Robot r2 = new Robot(2,2,'e',"b");
+		//Carrefour c1 = new Carrefour(1,2,'v',3,5,5);
+		Carte testcarte = new Carte(5,5,0);
+
 		Carrefour.init();
+		
+		//System.out.println(testcarte.toString());
+		/*System.out.println(Agent.getLA());
+		
 		System.out.println(Agent.getLA());
 		Incendie in = new Incendie(2,3);
 		Agent.affiche();
@@ -24,6 +33,6 @@ public class TestIncendie {
 			} catch(InterruptedException ex) {
 			    Thread.currentThread().interrupt();
 			}
-		}
+		}*/
 	}
 }
