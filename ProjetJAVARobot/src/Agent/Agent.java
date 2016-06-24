@@ -96,7 +96,7 @@ public abstract class Agent{
 			if(vertical >=0 ){
 				// on sait maintenant que le robot est devant nous
 				int horizontal = (int) Math.sqrt(Math.pow(robot.getY()-this.getY(), 2));
-				if(vertical >= horizontal){
+				if((int) Math.sqrt(Math.pow(vertical,2)) >= horizontal){
 					// il est maintenant dans le champs théorique de vision du robot
 					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
 				}
@@ -107,7 +107,7 @@ public abstract class Agent{
 			if(vertical <=0 ){
 				// on sait maintenant que le robot est devant nous
 				int horizontal = (int) Math.sqrt(Math.pow(robot.getY()-this.getY(), 2));
-				if(vertical >= horizontal){
+				if((int) Math.sqrt(Math.pow(vertical,2)) >= horizontal){
 					// il est maintenant dans le champs théorique de vision du robot
 					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
 				}
@@ -118,7 +118,7 @@ public abstract class Agent{
 			if(horizontal <=0 ){
 				// on sait maintenant que le robot est devant nous
 				int vertical = (int) Math.sqrt(Math.pow(robot.getX()-this.getX(), 2));
-				if(vertical <= horizontal){
+				if(vertical <= (int) Math.sqrt(Math.pow(horizontal,2))){
 					// il est maintenant dans le champs théorique de vision du robot
 					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
 				}
@@ -129,7 +129,7 @@ public abstract class Agent{
 			if(horizontal >=0 ){
 				// on sait maintenant que le robot est devant nous
 				int vertical = (int) Math.sqrt(Math.pow(robot.getX()-this.getX(), 2));
-				if(vertical <= horizontal){
+				if(vertical <= (int) Math.sqrt(Math.pow(horizontal,2))){
 					// il est maintenant dans le champs théorique de vision du robot
 					return dichotomie(new Coordonnee(robot.getX(),robot.getY()),new Coordonnee(this.getX(),this.getY()));
 				}
